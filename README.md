@@ -16,7 +16,7 @@ A great script to be added in your **unixporn** screenshot.
 ###Installation
 #### Linux
 use these commands in terminal :
-```commandline
+```shell
 git clone https://github.com/RohanKP1/ctree.git
 cd ctree/
 sudo mv ctree /usr/bin/ && chmod +x /usr/bin/ctree
@@ -24,7 +24,7 @@ sudo mv ctree /usr/bin/ && chmod +x /usr/bin/ctree
 
 #### macOS
 use these commands in terminal :
-```commandline
+```shell
 git clone https://github.com/RohanKP1/ctree.git
 cd ctree/
 sudo mv ctree /usr/local/bin/ && chmod +x /usr/local/bin/ctree
@@ -33,6 +33,6 @@ sudo mv ctree /usr/local/bin/ && chmod +x /usr/local/bin/ctree
 ###Animating the tree
 Add the parameter `--animate` or `-a` to animate the tree in an infinite loop (use `ctrl+c` to stop). This may fail to
 work in embedded terminals (e.g. PyCharm).
-```commandline
+```shell
 ctree -a
 ```
