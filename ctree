@@ -1,15 +1,48 @@
 #!/usr/bin/python3
 import random
-items = ["\033[0;92m*\033[0m","\033[1;91mo\033[0m","\033[1;94mo\033[0m","\033[1;93mo\033[0m"]
-print(" "*10+"\033[1;93m*\033[0m")
-for i in range(3,21,2):
-    stn=""
-    for j in range(0,i):
-        if random.randint(0,5)==1:
-            stn+=items[random.randint(1,3)]
-        else:
-            stn+=items[0]    
-    print(" "*(round((21-i)/2))+stn)         
-for k in range(1,3):
-    print(" "*9+"\033[0;37m| |\033[0m")
-print(" "*7+"\033[0;37mNWNWNWN\033[0m")
+import re
+
+COLOR_PROBABILITY = 1/6
+TREE_WIDTH = 21
+
+# https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_(Select_Graphic_Rendition)_parameters
+BOLD = 1
+
+WHITE = 37
+BRIGHT_RED = 91
+BRIGHT_GREEN = 92
+BRIGHT_YELLOW = 93
+BRIGHT_BLUE = 94
+
+BALL_COLORS = (
+    BRIGHT_RED,
+    BRIGHT_YELLOW,
+    BRIGHT_BLUE,
+)
+
+
+def styled_text(text: str, color: int = 0, style: int = 0) -> str:
+    return f"\033[{int(style)};{color}m{text}\033[0m"
+
+
+def print_centered(text: str, total_width: int = TREE_WIDTH):
+    unstyled_text = re.sub(r"\033\[[0-9]+;[0-9]+m([^\033]*)\033\[0m", r"\g<1>", text)
+    print(" " * round((total_width - len(unstyled_text)) / 2), text)
+
+
+if __name__ == '__main__':
+    print_centered(styled_text("*", BRIGHT_YELLOW, BOLD))
+
+    for row_width in range(3, TREE_WIDTH, 2):
+        row = ""
+        for _ in range(row_width):
+            if random.random() < COLOR_PROBABILITY:
+                row += styled_text("o", random.choice(BALL_COLORS), BOLD)
+            else:
+                row += styled_text("*", BRIGHT_GREEN)
+        print_centered(row)
+
+    for _ in range(2):
+        print_centered(styled_text("| |", WHITE))
+
+    print_centered(styled_text("NWNWNWN", WHITE))
