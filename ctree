@@ -2,8 +2,9 @@
 import random
 import re
 
-COLOR_PROBABILITY = 1/6
-TREE_WIDTH = 21
+COLOR_PROBABILITY = 1 / 6
+TREE_WIDTH = 21  # should be odd
+LEFT_PADDING = 2
 
 # https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_(Select_Graphic_Rendition)_parameters
 BOLD = 1
@@ -27,13 +28,13 @@ def styled_text(text: str, color: int = 0, style: int = 0) -> str:
 
 def print_centered(text: str, total_width: int = TREE_WIDTH):
     unstyled_text = re.sub(r"\033\[[0-9]+;[0-9]+m([^\033]*)\033\[0m", r"\g<1>", text)
-    print(" " * round((total_width - len(unstyled_text)) / 2), text)
+    print(" " * LEFT_PADDING + " " * ((total_width - len(unstyled_text)) // 2) + text)
 
 
 if __name__ == '__main__':
     print_centered(styled_text("*", BRIGHT_YELLOW, BOLD))
 
-    for row_width in range(3, TREE_WIDTH, 2):
+    for row_width in range(3, TREE_WIDTH + 1, 2):
         row = ""
         for _ in range(row_width):
             if random.random() < COLOR_PROBABILITY:
