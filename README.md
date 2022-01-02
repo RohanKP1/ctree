@@ -13,16 +13,26 @@ A great script to be added in your **unixporn** screenshot.
 
 ------
 
-**How to Install:**
- <br />
+### Installation
 #### Linux
-* use these commands in terminal :
-<br />`git clone https://github.com/RohanKP1/ctree.git`
-<br />`cd ctree/`
-<br />`sudo mv ctree /usr/bin/ && chmod +x /usr/bin/ctree`
+use these commands in terminal :
+```shell
+git clone https://github.com/RohanKP1/ctree.git
+cd ctree/
+sudo mv ctree /usr/bin/ && chmod +x /usr/bin/ctree
+```
 
 #### macOS
-* use these commands in terminal :
-<br />`git clone https://github.com/RohanKP1/ctree.git`
-<br />`cd ctree/`
-<br />`sudo mv ctree /usr/local/bin/ && chmod +x /usr/local/bin/ctree`
+use these commands in terminal :
+```shell
+git clone https://github.com/RohanKP1/ctree.git
+cd ctree/
+sudo mv ctree /usr/local/bin/ && chmod +x /usr/local/bin/ctree
+```
+
+### Animating the tree
+Add the parameter `--animate` or `-a` to animate the tree in an infinite loop (use `ctrl+c` to stop). This may fail to
+work in embedded terminals (e.g. PyCharm).
+```shell
+ctree -a
+```
