@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 import random
 import re
+import sys
+import time
 
 COLOR_PROBABILITY = 1 / 6
 TREE_WIDTH = 21  # should be odd
@@ -31,7 +33,7 @@ def print_centered(text: str, total_width: int = TREE_WIDTH):
     print(" " * LEFT_PADDING + " " * ((total_width - len(unstyled_text)) // 2) + text)
 
 
-if __name__ == '__main__':
+def print_tree():
     print_centered(styled_text("*", BRIGHT_YELLOW, BOLD))
 
     for row_width in range(3, TREE_WIDTH + 1, 2):
@@ -47,3 +49,23 @@ if __name__ == '__main__':
         print_centered(styled_text("| |", WHITE))
 
     print_centered(styled_text("NWNWNWN", WHITE))
+
+
+def main():
+    print_tree()
+    arguments = sys.argv[1:]
+    if "-a" in arguments or "--animate" in arguments:
+        while True:
+            time.sleep(1)
+            # move the cursor to the beginning of the tree
+            sys.stdout.write("\033[F" * (TREE_WIDTH // 2 + 4))
+            sys.stdout.flush()
+            print_tree()
+
+
+if __name__ == '__main__':
+    try:
+        main()
+    except KeyboardInterrupt:
+        # clean exit
+        exit(130)
