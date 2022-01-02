@@ -6,8 +6,8 @@ ctree - command line christmas tree
 It is small python script that prints a christmas tree in terminal.
 
 It is colourful and always gives you a different tree with different
-decorations varying in position with three colours more colours and
-decorations can be easilty added by appending in the list in code.
+decorations varying in position with three colours, more colours and
+decorations can be easilty added by looking into code.
 
 A great script to be added in your **unixporn** screenshot.
 
