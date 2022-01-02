@@ -13,7 +13,7 @@ A great script to be added in your **unixporn** screenshot.
 
 ------
 
-###Installation
+### Installation
 #### Linux
 use these commands in terminal :
 ```shell
