@@ -30,7 +30,7 @@ cd ctree/
 sudo mv ctree /usr/local/bin/ && chmod +x /usr/local/bin/ctree
 ```
 
-###Animating the tree
+### Animating the tree
 Add the parameter `--animate` or `-a` to animate the tree in an infinite loop (use `ctrl+c` to stop). This may fail to
 work in embedded terminals (e.g. PyCharm).
 ```shell
