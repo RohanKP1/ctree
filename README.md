@@ -19,7 +19,7 @@ use these commands in terminal :
 ```shell
 git clone https://github.com/RohanKP1/ctree.git
 cd ctree/
-sudo mv ctree /usr/bin/ && chmod +x /usr/bin/ctree
+sudo mv ctree.py /usr/bin/ && chmod +x /usr/bin/ctree.py
 ```
 
 #### macOS
@@ -27,12 +27,15 @@ use these commands in terminal :
 ```shell
 git clone https://github.com/RohanKP1/ctree.git
 cd ctree/
-sudo mv ctree /usr/local/bin/ && chmod +x /usr/local/bin/ctree
+sudo mv ctree.py /usr/local/bin/ && chmod +x /usr/local/bin/ctree.py
 ```
+
+### How to run
+Simply type `ctree.py` in terminal and `Enter`.
 
 ### Animating the tree
 Add the parameter `--animate` or `-a` to animate the tree in an infinite loop (use `ctrl+c` to stop). This may fail to
 work in embedded terminals (e.g. PyCharm).
 ```shell
-ctree -a
+ctree.py -a
 ```
