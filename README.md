@@ -1,6 +1,6 @@
 # ctree
 ctree - command line christmas tree
-[![Screenshot-from-2022-01-03-19-56-31.png](https://i.postimg.cc/4ytrngth/Screenshot-from-2022-01-03-19-56-31.png)](https://postimg.cc/4Hf8FjWJ)
+[![Screenshot-from-2022-01-04-05-46-45.png](https://i.postimg.cc/sgVHKRFs/Screenshot-from-2022-01-04-05-46-45.png)](https://postimg.cc/VdVFLpLV)
 ------
 
 It is small python script that prints a christmas tree in terminal.
